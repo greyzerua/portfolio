@@ -1,14 +1,9 @@
-
 let audio = document.getElementById("audioPlayer");
 let loader = document.getElementById("preloader");
 window.addEventListener("load", function () {
   loader.style.display = "none";
-  document.querySelector('.hey').classList.add('popup');
 })
 
-// preloader script ends here.........
-
-// switch for setting
 function settingtoggle(){
   document.getElementById("setting-container").classList.toggle('settingactivate');
   document.getElementById("visualmodetogglebuttoncontainer").classList.toggle('visualmodeshow');
@@ -79,9 +74,6 @@ navLi.forEach( li => {
   }
 })
 })
-console.log('%c Designed and Developed by Vinod Jangid ', 'background-image: linear-gradient(90deg,#8000ff,#6bc5f8); color: white;font-weight:900;font-size:1rem; padding:20px;');
-
-
 
 let mybutton = document.getElementById("backtotopbutton");
 window.onscroll = function(){
@@ -109,55 +101,3 @@ document.addEventListener("contextmenu", function(e){
       e.preventDefault();
   }
 }, false);
-
-
-
-
-let Pupils = document.getElementsByClassName('footer-pupil');
-let pupilsArr = Array.from(Pupils);
-
-let pupilStartPoint = -10;
-let pupilRangeX = 20;
-let pupilRangeY = 15;
-
-// mouse X 
-let mouseXStartPoint = 0;
-let mouseXEndPoint = window.innerWidth;
-let currentXPosition = 0;
-let fracXValue = 0;
-
-
-// mouse Y position 
-let mouseYEndPoint = window.innerHeight;
-let currentYPosition = 0;
-let fracYValue = 0;
-
-let mouseXRange = mouseXEndPoint - mouseXStartPoint;
-
-const mouseMove = (event) => {
-    currentXPosition = event.clientX - mouseXStartPoint;
-    fracXValue = currentXPosition / mouseXRange;
-
-    currentYPosition = event.clientY;
-    fracYValue = currentYPosition / mouseYEndPoint;
- 
-    // footer
-    let pupilXCurrrentPosition = pupilStartPoint + (fracXValue * pupilRangeX);
-    let pupilYCurrrentPosition = pupilStartPoint + (fracYValue * pupilRangeY);
-
-    // footer
-    pupilsArr.forEach((curPupil) => {
-      curPupil.style.transform= `translate(${pupilXCurrrentPosition}px, ${pupilYCurrrentPosition}px)`;
-  })
-
-}
-
-const windowResize = (event) => {
-    mouseXEndPoint = window.innerWidth;
-    mouseYEndPoint = window.innerHeight;
-    mouseXRange = mouseXEndPoint - mouseXStartPoint;
-}
-
-
-window.addEventListener('mousemove', mouseMove);
-window.addEventListener('resize', windowResize);

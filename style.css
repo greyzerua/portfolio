@@ -923,7 +923,11 @@ noscript {
     var(--static-heading-gradient-pink)
   );
 }
-
+@media (max-width: 500px) {
+  .ua {
+    width: 95px !important;
+  };
+}
 .info-dp-section {
   width: 100%;
   display: flex;

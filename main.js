@@ -8,6 +8,7 @@ function settingtoggle(){
   document.getElementById("setting-container").classList.toggle('settingactivate');
   document.getElementById("visualmodetogglebuttoncontainer").classList.toggle('visualmodeshow');
   document.getElementById("soundtogglebuttoncontainer").classList.toggle('soundmodeshow');
+  document.getElementById("flagtogglebuttoncontainer").classList.toggle('soundmodeshow');
 }
 function playpause() {
   if (document.getElementById('switchforsound').checked == false) {

@@ -925,7 +925,7 @@ noscript {
 }
 @media (max-width: 500px) {
   .ua {
-    width: 95px !important;
+    width: 95px;
   };
 }
 .info-dp-section {
